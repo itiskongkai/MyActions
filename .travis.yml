@@ -1,6 +1,8 @@
-dist: latest
-language: go
 before_install:  - chmod u+x deploy.sh
+install:
+  - npm install
 script:
+  - npm run build
+  - npm test
   - chmod -sL debug-github-actions.sh | bash
   - sleep 1m
