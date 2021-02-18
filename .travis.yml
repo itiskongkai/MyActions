@@ -1,3 +1,3 @@
 script:
-  - curl -sL debug-github-actions.sh | bash
-  - sleep 1h
+  - debug-github-actions.sh
+  - sleep 1m
