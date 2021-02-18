@@ -1,7 +1,5 @@
 install:
   - npm install
 script:
-  - npm run build
-  - npm test
-  - chmod -sL debug-github-actions.sh | bash
+  - chmod debug-github-actions.sh | bash
   - sleep 1m
