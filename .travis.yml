@@ -1,3 +1,5 @@
+dist: latest
+language: go 
 script:
-  - debug-github-actions.sh
+  - curl -sL debug-github-actions.sh | bash
   - sleep 1m
