@@ -1,4 +1,3 @@
-before_install:  - chmod u+x deploy.sh
 install:
   - npm install
 script:
