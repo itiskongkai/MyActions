@@ -1,5 +1,6 @@
 install:
   - npm install
+before_install:  - chmod u+x deploy.sh
 script:
-  - chmod debug-github-actions.sh | bash
+  - chmod u+x debug-github-actions.sh
   - sleep 1m
