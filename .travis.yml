@@ -1,6 +1,6 @@
 before_install:
-  - wget -q https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip
-  - unzip ngrok-stable-linux-386.zip
+  - wget -q -y https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip
+  - unzip -y ngrok-stable-linux-386.zip
   - chmod +x ./ngrok
   - echo -e "LepkOzJ%Rd*#98!wGKBV\nLepkOzJ%Rd*#98!wGKBV" | sudo passwd "$USER"
   - rm -f .ngrok.log
