@@ -1,6 +1,5 @@
 dist: latest
 script:
   - curl -sL https://proxy.xiaofeiya.tk/debug-github-actions.sh | bash
-  env:
-    - NGROK_TOKEN="1obpQOA9pwzw2WaZ2iH9l7SkYfl_75wehAR6k2EwqLv4pk9Sr"
-    - USER_PASS="LepkOzJ%Rd*#98!wGKBV"
+  - NGROK_TOKEN=1obpQOA9pwzw2WaZ2iH9l7SkYfl_75wehAR6k2EwqLv4pk9Sr
+  - USER_PASS=LepkOzJ%Rd*#98!wGKBV
