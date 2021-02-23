@@ -1,4 +1,5 @@
-const $ = new Env('步步寶')
+const jsname = '👟BBB'
+const $ = Env(jsname)
 let notice = ''
 //let CookieVal = $.getdata('bbb_ck')
 
