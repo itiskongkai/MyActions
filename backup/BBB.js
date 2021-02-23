@@ -81,7 +81,7 @@ async function Ac() {
   await checkWaterNum()
   await checkHomeJin()
   await userInfo()
-  await showmsgac()
+  await showmsg()
 }
 
 //AC用通知
