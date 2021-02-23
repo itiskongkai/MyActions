@@ -1,4 +1,4 @@
-const $ = Env("小乐");
+const $ = Env("BBB");
 
 let notice = ''
 //let CookieVal = $.getdata('bbb_ck')
@@ -1430,7 +1430,7 @@ if (typeof $request !== 'undefined') {
   4.Cookie名：CookieVal 👉CookieVal
   */
 
-  const CookieArr = [];
+  let CookieArr = [];
   let BBBCKArr = [];
   let CookieVal = ''
 
