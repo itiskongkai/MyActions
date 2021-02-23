@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.XL_URL
+        if: env.BBBCK
         run: |
           cd ~/MyActions
           npm install
