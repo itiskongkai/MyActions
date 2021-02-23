@@ -15,7 +15,7 @@ var notify = $.isNode() ? require("./sendNotify") : ``;
 var notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 var notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知
 $.message = '', COOKIES_SPLIT = ''
-let notice = ''
+
 //let CookieVal = $.getdata('bbb_ck')
 
 
@@ -53,9 +53,9 @@ if ($.isNode()) {
       CookieVal = CookieArr[i];
       $.index = i + 1;
     }
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       await Ac();
-      await $.wait(1000 * 30)
+      await $.wait(60000 * 25)
     }
 
   }
@@ -84,7 +84,7 @@ async function Ac() {
   await checkWaterNum()
   await checkHomeJin()
   await userInfo()
-  await showmsg()
+  await showmsgac()
 }
 
 //AC用通知
@@ -124,7 +124,7 @@ now = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000
 
 
 function showmsg() {
-  $.msg($.name, '', notice)
+  $.msg($.name, '', $.message)
 }
 
 var getBoxId = (function() {
@@ -147,9 +147,9 @@ function userInfo() {
       const userinfo = JSON.parse(data)
       if (response.statusCode == 200 && userinfo.code != -1) {
         $.log('\n🎉模擬登陸成功\n')
-        notice += '🎉步步寶帳號: ' + userinfo.username + '\n' + '🎉當前金幣: ' + userinfo.jinbi + '💰 約' + userinfo.money + '元💸\n'
+        $.message += '🎉步步寶帳號: ' + userinfo.username + '\n' + '🎉當前金幣: ' + userinfo.jinbi + '💰 約' + userinfo.money + '元💸\n'
       } else {
-        notice += '⚠️異常原因: ' + userinfo.msg + '\n'
+        $.message += '⚠️異常原因: ' + userinfo.msg + '\n'
       }
       resolve()
     })
@@ -1382,7 +1382,7 @@ function withDraw() {
       if (withdraw.code == 1) {
         $.msg(draw.msg)
       } else {
-        notice += draw.tip + '\n' + draw.msg + '\n'
+        $.message += draw.tip + '\n' + draw.msg + '\n'
       }
       resolve()
     })
