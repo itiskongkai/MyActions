@@ -29,7 +29,7 @@ jobs:
       - name: '运行 【BBB】'
         if: env.BBBCK
         run: |
-          cd ~/JavaScript
+          cd ~/MyActions
           node backup/BBB.js
         env:
 
