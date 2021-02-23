@@ -1437,10 +1437,6 @@ let CookieVal = ''
 
 
     !(async () => {
-      if (!CookieArr[0]) {
-        console.log($.name, '【提示】请把抓包的请求体填入Github 的 Secrets 中，请以&隔开')
-        return;
-      }
       for (let i = 0; i < CookieArr.length; i++) {
         if (CookieArr[i]) {
           CookieVal = CookieArr[i];
