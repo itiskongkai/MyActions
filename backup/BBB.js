@@ -1,4 +1,4 @@
-const $ = Env("小乐");
+const $ = Env("BBB");
 
 let notice = ''
 //let CookieVal = $.getdata('bbb_ck')
