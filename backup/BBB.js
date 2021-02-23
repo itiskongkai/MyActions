@@ -11,7 +11,7 @@ const $ = Env("BBB");
 */
 
 
-var notify = $.isNode() ? require("./sendNotify") : ``;
+const notify = $.isNode() ? require("./sendNotify") : ``;
 var notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 var notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知
 $.message = '', COOKIES_SPLIT = ''
@@ -84,26 +84,25 @@ async function Ac() {
 }
 
 //AC用通知
-function showmsgac() {
+function msgShow() {
   return new Promise(async resolve => {
-    if (notifyInterval != 1) {
-      console.log($.name + '\n' + $.message);
-    }
-    if (notifyInterval == 1) {
-      $.msg($.name, ``, $.message);
-    }
-    if (notifyInterval == 2 && (nowTimes.getHours() === 12 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
-      $.msg($.name, ``, $.message);
-    }
-    if (notifyInterval == 3 && (nowTimes.getHours() === 6 || nowTimes.getHours() === 12 || nowTimes.getHours() === 18 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
-      $.msg($.name, ``, $.message);
-    }
-    if (notifyttt == 1 && $.isNode() && (nowTimes.getHours() === 12 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10))
-      await notify.sendNotify($.name, $.message);
-    resolve()
+      if (notifyInterval != 1) {
+        console.log($.name + '\n' + $.message);
+      }
+      if (notifyInterval == 1) {
+        $.msg($.name, ``, $.message);
+      }
+      if (notifyInterval == 2 && (nowTimes.getHours() === 12 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
+        $.msg($.name, ``, $.message);
+      }
+      if (notifyInterval == 3 && (nowTimes.getHours() === 6 || nowTimes.getHours() === 12 || nowTimes.getHours() === 18 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
+        $.msg($.name, ``, $.message);
+      }
+      if (notifyttt == 1 && $.isNode() && (nowTimes.getHours() === 12 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10))
+        await notify.sendNotify($.name, $.message);	
+	resolve()
   })
 }
-
 
 
 
